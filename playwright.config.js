@@ -5,7 +5,8 @@ const config = {
   testDir: "./tests",
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
-  expact: { //timeout for all assertion
+  expect: {
+    //timeout for all assertion
     timeout: 5000,
   },
 
