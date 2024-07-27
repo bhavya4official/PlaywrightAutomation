@@ -1,15 +1,16 @@
-const { test, expect } = require("@playwright/test"); //Importing test & assert annotation from playwright node_modules package
-//console.log(">"+{test});
+//const { test, expect } = require("@playwright/test"); //Importing test & assert annotation from playwright node_modules package
+import { test, expect } from "@playwright/test";
 
+//Playwright code Test Format
 test("Playwright test Fomat", function () {
-  //Playwright code -
   console.log("Test format");
 });
 
-//{browser} fixture - Global variable which are available in entire project
-//JS is asyncronous (each syntax try to execute parallelly) - use async before function to use await()
+//JS is asyncronous (each syntax try to execute parallelly) - to execute syncronously use async before function to use await() method
 
 test("Browser Context playwright test", async ({ browser }) => {
+  //{browser} fixture - Global variable which are available in entire project
+  //Each test execute in isolated BrowserContext with fresh environment
   //Create new context/fresh instance of browser (without shared plugin/cookies/cache)
   const context = await browser.newContext(); // Where ever the action is performed - await should be there
   const page = await context.newPage();
@@ -18,7 +19,7 @@ test("Browser Context playwright test", async ({ browser }) => {
 
 test("Page Context playwright test", async ({ page }) => {
   await page.goto("https://playwright.dev/docs/intro");
-  //get title - Assertion
+  //get page title - Assertion
   await expect(page).toHaveTitle("Installation | Playwright");
   console.log(await page.title());
 });
@@ -48,7 +49,7 @@ test("Login page test", async ({ browser }) => {
   console.log(await cardTitle.allTextContents()); //This method/action does not wait 30s timeout (until all elements are showing up)
 });
 
-test.only("UI controls test", async ({ page }) => {
+test("UI controls test", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 
   const userName = page.locator("#username");
@@ -79,6 +80,29 @@ test.only("UI controls test", async ({ page }) => {
   //   await page.pause();
 });
 
+test.only("Child window handle", async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await browser.newPage();
+  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+
+  const documentLink = page.locator("[href*='documents-request']");
+
+  //Array of promises - Wrap in one array - When need multiple steps to execute asyncronously/parallely and wait until those steps are successfully accomplieshed
+  const [newPage] = await Promise.all([
+    //If 2 new page opens use -> [newPage1, newPage2]
+    context.waitForEvent("page"), //Wait for event of new page opening in bg (It will return new page promise - 'pending')
+    documentLink.click(), //New page is opened
+  ]); //This block keep iterating until both promises successfully fulfilled
+  const text = await newPage.locator(".red").textContent();
+  const arraText = text.split("@");
+  const domain = arrayText[1].split(" ")[0];
+  console.log(domain);
+  await page.locator("#username").fill(domain);
+
+  //   await page.pause();
+});
+
 /*
+Every operation return status of step/operation called 'Promise' {Pending / Rejected / Fulfilled}
 use .only helper attribute with test to execute only particular test annotation
 */

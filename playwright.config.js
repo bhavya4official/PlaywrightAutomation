@@ -31,4 +31,11 @@ npx playwright test --headed
 
 Explicitly tell playwright to run in headed (browser mode)
 By default playwright run the test in headless browser mode (browser will not open)
+
+npx playwright test --debug
+Launch Playwright inspector, Trace viewer - To start test in debug mode - execute step by step
+Use Explore option in Playwright inspector to inpect element & auto-genereate or validate CSS selector
+
+npx playwright codegen https:www.google.com
+Launch codegen tool - Record & Playback feature to auto-generate automation script
 */
