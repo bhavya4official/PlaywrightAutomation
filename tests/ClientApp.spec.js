@@ -26,5 +26,7 @@ test("E-commerce E2E work flow", async ({ page }) => {
       await product.nth(i).locator("text= Add To Cart").click();
       break;
     }
+
+    //Using Psudo class - Find text which have h3 tag
   }
 });
