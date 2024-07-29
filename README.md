@@ -27,7 +27,7 @@
 
 1. Tracking & Debugging
 
-   `Automatic SS` `Test video recording` `Comprehansive Logging`
+   `Automatic SS` `Test video recording` `Comprehensive Logging`
 
 2. Network Interception
 
@@ -53,7 +53,7 @@
 
    `.class` | `tagname.class`
 
-3. Generate css selector based on attribute
+3. Generate CSS selector based on attribute
 
    `[attribute='value']`
    (With regEx -> `[attribute*='val']`)
