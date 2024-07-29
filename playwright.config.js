@@ -16,7 +16,7 @@ const config = {
   /* Shared settings for all the projects below. */
   use: {
     browserName: "webkit",
-    headless: false, //Run the test in head/headless browser mode
+    headless: true, //Run the test in head/headless browser mode
     screenshot: "on",
     trace: "retain-on-failure", //Value 'on' will capture the logs of each steps
   },
