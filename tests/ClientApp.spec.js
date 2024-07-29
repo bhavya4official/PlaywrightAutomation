@@ -26,7 +26,10 @@ test("E-commerce E2E work flow", async ({ page }) => {
       await product.nth(i).locator("text= Add To Cart").click();
       break;
     }
-
+    await page.locator("[routerlink*='cart']").click();
+    page.locator("div li").waitFor(); //.first().waitFor(); It waits for mentioned elements to appear - because auto-wait is not present for isVisible() action in playwright
+    const bool = await page.locator("h3:has-text='ZARA COAT 3'").isVisible();
+    await expect(bool).toBeTruthy();
     //Using Psudo class - Find text which have h3 tag
   }
 });

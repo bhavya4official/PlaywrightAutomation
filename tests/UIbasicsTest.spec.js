@@ -33,8 +33,6 @@ test("Login page test", async ({ browser }) => {
   const cardTitle = page.locator(".card-body a");
 
   await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-
-  //Playwright suggest to use CSS locator instead of xpath - #id .class [attribute='value']
   await userName.fill("Bhavya");
   await page.locator("[type='password']").fill("learning");
   await signIn.click();
@@ -103,6 +101,8 @@ test("Child window handle", async ({ browser }) => {
 });
 
 /*
+Playwright suggest to use CSS locator instead of xpath - #id | .class | [attribute='value'] | text='abc' | tag:has-text='abc'
+
 Every operation return status of step/operation called 'Promise' {Pending / Rejected / Fulfilled}
 use .only helper attribute with test to execute only particular test annotation
 */
