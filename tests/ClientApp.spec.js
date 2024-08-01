@@ -21,15 +21,15 @@ test("E-commerce E2E work flow", async ({ page }) => {
   const product = page.locator(".card-body");
   const productName = "Zara Coat 3";
 
-  for (let i = 0; i < (await product.count()); i++) {
+  for (let i = 0; i < (await product.count()); i++) { //Find product on home page & add it to card
     if ((await product.nth(i).locator("b")) === productName) {
       await product.nth(i).locator("text= Add To Cart").click();
       break;
     }
-    await page.locator("[routerlink*='cart']").click();
+    await page.locator("[routerlink*='cart']").click(); //Click on Cart button
     page.locator("div li").waitFor(); //.first().waitFor(); It waits for mentioned elements to appear - because auto-wait is not present for isVisible() action in playwright
-    const bool = await page.locator("h3:has-text='ZARA COAT 3'").isVisible();
+    const bool = await page.locator("h3:has-text='ZARA COAT 3'").isVisible(); //Using Psudo class - Find text which have h3 tag
     await expect(bool).toBeTruthy();
-    //Using Psudo class - Find text which have h3 tag
+
   }
 });

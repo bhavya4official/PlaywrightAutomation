@@ -66,4 +66,8 @@
 
    `text='abc'` | `tag:has-text='abc'`
 
+6. Using psudo class
+
+   `tagName:psudo-method='value'`
+
 🧑🏻‍💻 **Udemy course:** [Playwright Automation Testing from Scratch with Framework](https://www.udemy.com/course/playwright-tutorials-automation-testing/)

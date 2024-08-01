@@ -85,7 +85,7 @@ test("Child window handle", async ({ browser }) => {
 
   const documentLink = page.locator("[href*='documents-request']");
 
-  //Array of promises - Wrap in one array - When need multiple steps to execute asyncronously/parallely and wait until those steps are successfully accomplieshed
+  //Array of promises - Wrap in one array - Wait until multiple steps are successfully accomplieshed - needed when multiple steps to be executed asyncronously/parallely
   const [newPage] = await Promise.all([
     //If 2 new page opens use -> [newPage1, newPage2]
     context.waitForEvent("page"), //Wait for event of new page opening in bg (It will return new page promise - 'pending')

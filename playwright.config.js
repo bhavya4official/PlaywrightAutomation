@@ -38,6 +38,6 @@ npx playwright test --debug
 Launch Playwright inspector, Trace viewer - To start test in debug mode - execute step by step
 Use Explore option in Playwright inspector to inpect element & auto-genereate or validate CSS selector
 
-npx playwright codegen https:www.google.com
-Launch codegen tool - Record & Playback feature to auto-generate automation script
+npx playwright codegen https:www.google.com (or google.com)
+Launch codegen tool - 'Record & Playback' feature to auto-generate automation script
 */
