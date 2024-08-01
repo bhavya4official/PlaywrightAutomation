@@ -55,7 +55,7 @@
 
 3. Generate CSS selector based on attribute
 
-   `[attribute='value']`
+   `[attribute='value']` `tagname[attribut='value']`
    (With regEx -> `[attribute*='val']`)
 
 4. Traversing from parent to child element
