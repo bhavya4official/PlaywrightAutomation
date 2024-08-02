@@ -4,11 +4,26 @@
 **It provides the ability to automate browser tasks in Chromium, Firefox and WebKit with a single API.**
 **Playwright is built to enable cross-browser end-to-end testing for modern web apps, that is ever-green, capable, reliable and fast.**
 
+
+### Get started:
+1. Initialize playwright project in folder
+
+    /folderpath/`npm init playwright@latest`
+
+2. Run using Node Package Runner in headed mode
+
+    `npx playwright test --headed`
+
+3. HTML test report (Default)
+
+    `npx playwright show-report`
+
+
 ### Playwright Advantages:
 
 1. Reliable E2E testing
 
-   `Auto-wait capability` for reliable E2E modern web app testing.
+   `Auto-wait capability` for reliable E2E modern web app testing. (retry mechanism)
 
 2. Cross-browser compatibility
 
@@ -22,6 +37,7 @@
 4. Multilingual Flexibility
 
    Language bindings for `JS` `TypeScript` `Java` `Python` `C# (.Net)`
+
 
 ### Playwright Advanced Features:
 
@@ -40,6 +56,7 @@
 4. Codegen tool
 
    `Auto-generate test code` by recording user actions.
+
 
 > Playwright suggests using CSS locator instead of XPath.
 
@@ -70,18 +87,6 @@
 
    `tagName:psudo-method='value'`
 
-
-### Get started:
-1. Initialize playwright project in folder
-
-    /folderpath/`npm init playwright@latest`
-
-2. Run using Node Package Runner in headed mode
-
-    `npx playwright test --headed`
-
-3. HTML test report (Default)
-    `npx playwright show-report`
 
 
 🧑🏻‍💻 **Udemy course:** [Playwright Automation Testing from Scratch with Framework](https://www.udemy.com/course/playwright-tutorials-automation-testing/)
