@@ -70,4 +70,18 @@
 
    `tagName:psudo-method='value'`
 
+
+### Get started:
+1. Initialize playwright project in folder
+
+    /folderpath/`npm init playwright@latest`
+
+2. Run using Node Package Runner in headed mode
+
+    `npx playwright test --headed`
+
+3. HTML test report (Default)
+    `npx playwright show-report`
+
+
 🧑🏻‍💻 **Udemy course:** [Playwright Automation Testing from Scratch with Framework](https://www.udemy.com/course/playwright-tutorials-automation-testing/)
