@@ -23,7 +23,7 @@
 
 1. Reliable E2E testing
 
-   `Auto-wait capability` for reliable E2E modern web app testing. (retry mechanism)
+   `Auto-wait capability` (Retry mechanism - automatically waits for the wide range of actionability checks to pass before performing each action.)
 
 2. Cross-browser compatibility
 
