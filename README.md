@@ -23,7 +23,7 @@
 
 1. Reliable E2E testing
 
-   `Auto-wait capability` (Retry mechanism - automatically waits for the wide range of actionability checks to pass before performing each action.)
+   `Auto-wait capability` (Retry mechanism - automatically waits for the wide range of 'actionability checks' to pass before performing each action.)
 
 2. Cross-browser compatibility
 
@@ -77,15 +77,15 @@
 
 4. Traversing from parent to child element
 
-   `parentTagName childTagName`
+   `parentTagName > childTagName` `.parentClassName .childClassName`
 
 5. Based on text
 
-   `text='abc'` | `tag:has-text='abc'`
+   `text=abc` | `tag:has-text('abc')`
 
 6. Using psudo class
 
-   `tagName:psudo-method='value'`
+   `tagName:psudo-method('value')`
 
 
 
