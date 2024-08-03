@@ -25,7 +25,7 @@ test.only("E-commerce E2E work flow", async ({ page }) => {
   /* Find product on home page & add it to card */
   const products = page.locator(".card-body");
 
-  await page.locator(".card-body").first().waitFor(); // Wait for first element to be visible - need to wait because count() is not in auto-wait list
+  await page.locator(".card-body").first().waitFor(); // Wait for first element to be visible - need to wait because count() method does not have auto-wait capability
   console.log(await page.locator(".card-body b").allTextContents());
   console.log(">First item: "+await products.nth(0).locator("b").textContent());
 
@@ -39,7 +39,7 @@ test.only("E-commerce E2E work flow", async ({ page }) => {
 
   /* Navigate to Cart page */
   await page.locator("[routerlink*='cart']").click();
-  await page.locator("div li").first().waitFor(); // It waits for mentioned elements to appear - because auto-wait is not present for isVisible() action in playwright
+  await page.locator("div li").first().waitFor(); // It waits for mentioned elements to appear - because auto-wait capability is not present for isVisible() action in playwright
   const bool = await page.locator("h3:has-text('ZARA COAT 3')").isVisible(); //Using Psudo class - Find text which have h3 tag
   await expect(bool).toBeTruthy();
 
@@ -62,9 +62,9 @@ test.only("E-commerce E2E work flow", async ({ page }) => {
       break;
     }
   }
-  await expect(page.locator("[placeholder='Select Country']")).toHaveValue('India');
+  await expect(page.locator("[placeholder='Select Country']")).toHaveValue('India'); // Verify Select Country dropdown selected value
 
-  await page.locator(".action__submit").click(); //Click on Submit button
+  await page.locator(".action__submit").click(); // Click on Submit button
 
   await expect(page.locator(".hero-primary")).toHaveText("Thankyou for the order."); // Verify Thankyou message
   const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent(); // Getting & storing order id
@@ -84,7 +84,7 @@ test.only("E-commerce E2E work flow", async ({ page }) => {
   }
 
   /* Order Summary page */
-  const orderIdDetails = await page.locator(".col-text").textContent();
+  const orderIdDetails = await page.locator(".col-text").textContent(); // waitFor() is not needed because textContext have auto-wait capability
 
   await expect(orderId.includes(orderIdDetails)).toBeTruthy(); // Verify orderId on Order Summary page
 
