@@ -17,7 +17,7 @@
 3. HTML test report (Default)
 
     `npx playwright show-report`
-
+***
 
 ### Playwright Advantages:
 
@@ -37,7 +37,7 @@
 4. Multilingual Flexibility
 
    Language bindings for `JS` `TypeScript` `Java` `Python` `C# (.Net)`
-
+***
 
 ### Playwright Advanced Features:
 
@@ -56,7 +56,7 @@
 4. Codegen tool
 
    `Auto-generate test code` by recording user actions.
-
+***
 
 > Playwright suggests using CSS locator instead of XPath.
 
@@ -86,7 +86,7 @@
 6. Using psudo class
 
    `tagName:psudo-method('value')`
-
+***
 
 
 🧑🏻‍💻 **Udemy course:** [Playwright Automation Testing from Scratch with Framework](https://www.udemy.com/course/playwright-tutorials-automation-testing/)
