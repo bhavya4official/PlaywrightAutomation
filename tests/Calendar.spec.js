@@ -20,7 +20,7 @@ test.only("Calendar validation", async ({page})=>{
     /* Assertion for selected date */
     const selectedDate = await page.locator(".react-date-picker__inputGroup > input[name='date']").getAttribute('value');
     console.log("D> "+ selectedDate);
-    await expect(selectedDate.includes(year), "Verify selected date").toBeTruthy(); // .toHaveValue('2');
+    await expect(selectedDate.includes(year), "Verify selected date").toBeTruthy();
     // await expect(page.locator(".react-date-picker__inputGroup > input[name='date']")).toHaveAttribute('value', `${year}-0${monthNumber}-0${date}`);
 
     await expect(page.locator('input[name="month"]'), 'Verify month').toHaveValue(monthNumber); // CodeGen assertions
