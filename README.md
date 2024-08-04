@@ -10,7 +10,7 @@
 
     /folderpath/`npm init playwright@latest`
 
-2. Run using Node Package Runner in headed mode
+2. Run using Node Package Execute/Runner in headed mode
 
     `npx playwright test --headed`
 
@@ -60,7 +60,7 @@
 
 > Playwright suggests using CSS locator instead of XPath.
 
-### CSS Selectors:
+### CSS Locators to identify elements:
 
 1. If id is present
 

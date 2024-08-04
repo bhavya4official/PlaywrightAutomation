@@ -4,7 +4,7 @@ test("Wait dynamically for new page in service based app", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
   await page.locator("#userEmail").fill("bhavya4official@gmail.com");
   await page.locator("#userPassword").fill("Test@123");
-  await page.locator("[value='Login']").click();
+  await page.locator("[value='Login']").click(); // 'button:has-text("Log in"), button:has-text("Sign in")' psudo-class method
 
   //await page.waitForLoadState("networkidle"); //wait until network comes to idle state - So all elements are fully loaded
   await page.locator(".card-body b").first().waitFor(); //Recommanded wait instead of networkidle - to wait until element fully loaded
@@ -12,7 +12,7 @@ test("Wait dynamically for new page in service based app", async ({ page }) => {
   console.log(titles);
 });
 
-test.only("E-commerce E2E work flow", async ({ page }) => {
+test("E-commerce E2E work flow", async ({ page }) => {
   const email = "bhavya4official@gmail.com";
   const productName = "ZARA COAT 3";
 
