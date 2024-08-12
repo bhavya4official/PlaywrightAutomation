@@ -32,10 +32,10 @@ module.exports = config;
 
 /* Run test command -
 npx- Node Package Execute (npm package runner - that can execute any package from the npm registry without ever installing it)
-npx playwright test (npx automatically find playwright module from node_modules & find config file & trigger testDir)
-*/
 
-/* 
+npx playwright test 
+(npx automatically find playwright module from node_modules & find config file & trigger testDir)
+ 
 Playwright test options passed to the command line take priority over the configuration file.
 
 npx playwright test --headed
