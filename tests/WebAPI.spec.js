@@ -1,3 +1,5 @@
+/* Generating login token & orderID using API in before Hook then using in test by injecting token in browser session */
+
 const { test, expect, request } = require("@playwright/test");
 
 const loginPayload = { userEmail: "bhavya4official@gmail.com", userPassword: "Test@123" }; //Store payload in JS object format - at runtime it will convert to JSON format
@@ -8,7 +10,7 @@ let orderId;
 test.beforeAll("API execution", async () => {
     /* Login API */
     const apiContext = await request.newContext();
-    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login",
+    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", // Hit login API & get response
         {
             data: loginPayload
         });

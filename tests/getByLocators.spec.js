@@ -8,7 +8,7 @@ test("getByLabel - Playwright special locators", async ({ page }) => {
 
   await page.getByPlaceholder("Password").fill("test@123");
   await page.getByRole("button", {name: 'Submit'}).click();
-  await expect(page.getByText("Success! The Form has been submitted successfully!."), 'Success message displayed.').toBeVisible();
+  await expect.soft(page.getByText("Success! The Form has been submitted successfully!."), 'Success message displayed.').toBeVisible();
   //By default, failed assertion will terminate test execution. Soft assertions do not terminate test execution even when failed.
   //Custom expect message as a second argument to the expect function - it will shown in reporters
 

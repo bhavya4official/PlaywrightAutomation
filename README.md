@@ -88,5 +88,47 @@
    `tagName:psudo-method('value')`
 ***
 
+### Test run commands
+npx- Node Package Execute (npm package runner - that can execute any package from the npm registry without ever installing it)
 
+`npx playwright test`
+
+(npx automatically find playwright module from node_modules & find config file & trigger testDir)
+ 
+Playwright test options passed to the command line take priority over the configuration file.
+
+`npx playwright test --headed`
+
+To run test in head mode use --headed command line flag
+Explicitly tell playwright to run in headed (browser mode)
+By default playwright run the test in headless browser mode (browser will not open)
+
+`npx playwright test --grep / -g "Maching String"`  
+
+Using OR operator "@fast | @slow"
+Sring regular expression will match project name, test file name, test.describe titles, test title and all test tags.
+
+`npx playwright test --max-failures=10`
+
+This flag limit the number of failed tests in the whole test suite to avoid wasting resources on broken test suites/build.
+
+`npx playwright test --shard=1/4`  (Split the suite into four shards, each machine running one fourth of the tests)
+
+Sharding (mode of operation to partition/split test suit) - Running tests on multiple machines simultaneously
+Playwright will shard test files only
+
+`npx playwright test --debug`
+
+Launch Playwright inspector, Trace viewer - To start test in debug mode - execute step by step
+Use Explore option in Playwright inspector to inpect element & auto-genereate or validate CSS selector
+
+`npx playwright test --ui`
+
+UI Test Runner - 
+
+`npx playwright codegen google.com (URL is optional)`
+
+Launch codegen tool - 'Record & Playback' feature to auto-generate automation script for Actions & Assertions
+
+***
 🧑🏻‍💻 **Udemy course:** [Playwright Automation Testing from Scratch with Framework](https://www.udemy.com/course/playwright-tutorials-automation-testing/)
