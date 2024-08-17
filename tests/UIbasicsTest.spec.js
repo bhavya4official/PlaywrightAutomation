@@ -11,7 +11,7 @@ test("Playwright test title", function () {
 
 //JS is asyncronous (each syntax try to execute parallelly) - to execute syncronously use async before function to use await() method
 
-test("Browser Context playwright test", async ({ browser }) => {
+test("@smoke Browser Context playwright test", async ({ browser }) => {
     //{browser} fixture - Global variable which are available in entire project
     //Each test execute in isolated BrowserContext with fresh environment
     //Create new context/fresh instance of browser (without shared plugin/cookies/cache)
@@ -107,5 +107,7 @@ test("Child window handle", async ({ browser }) => {
 Playwright suggest to use CSS locator instead of xpath - #id | .class | [attribute='value'] | text=abc | tag:has-text('abc')
 
 Every operation return status of step/operation called 'Promise' {Pending / Rejected / Fulfilled}
-use .only helper attribute with test to execute only particular test annotation
+
+Use test.only helper attribute with test to execute only particular test annotation
+Use test.skip to skip the selected test
 */

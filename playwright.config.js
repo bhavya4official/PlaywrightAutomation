@@ -1,8 +1,12 @@
 const { devices } = require("@playwright/test"); //importing package
+const { retries } = require("./original_playwright.config");
 
 const config = {
     /* Look for test files in the "tests" directory, relative to this configuration file. */
     testDir: "./tests",
+    // retries: 1, // Retry failed TC 1 time - To resolve 'Race condition' - helpful when flacky test present
+    workers: 1, // Disable file parallel execution mechanism
+
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
     expect: {
