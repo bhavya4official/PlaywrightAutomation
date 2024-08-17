@@ -40,7 +40,7 @@ test.beforeEach(() => {
 
 });
 
-test("Login & place order using API before hook", async ({ page }) => {
+test("@API Login & place order using API before hook", async ({ page }) => {
     // To execute JS code - Insert a value in browser session (local storage)
     page.addInitScript(value => {
         window.localStorage.setItem("token", value); // Setting key-value to store token in Dev-tool>Application>Storage>local Storage
