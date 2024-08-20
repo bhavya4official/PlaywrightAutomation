@@ -1,6 +1,6 @@
-import {test, expect} from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
-test("Calendar validation", async ({page})=>{
+test("Calendar validation", async ({ page }) => {
     const date = "28";
     const monthNumber = "2";
     const year = "2024";
@@ -12,14 +12,14 @@ test("Calendar validation", async ({page})=>{
     await page.locator(".react-calendar__navigation__label").click();
     await page.locator(".react-calendar__navigation__label").click();
     await page.getByText(year).click();
-    await page.locator(".react-calendar__year-view__months__month").nth(Number(monthNumber)-1).click();
+    await page.locator(".react-calendar__year-view__months__month").nth(Number(monthNumber) - 1).click();
 
-    const allDates = page.locator("//abbr[text()='"+date+"']");
-    await allDates.filter({hasNot: page.locator('.react-calendar__month-view__days__day--neighboringMonth')}).click(); // Wants to remove dates of neighboring months
-    
+    const allDates = page.locator("//abbr[text()='" + date + "']");
+    await allDates.filter({ hasNot: page.locator('.react-calendar__month-view__days__day--neighboringMonth') }).click(); // Wants to remove dates of neighboring months
+
     /* Assertion for selected date */
     const selectedDate = await page.locator(".react-date-picker__inputGroup > input[name='date']").getAttribute('value');
-    console.log("D> "+ selectedDate);
+    console.log("D> " + selectedDate);
     await expect(selectedDate.includes(year), "Verify selected date").toBeTruthy();
     // await expect(page.locator(".react-date-picker__inputGroup > input[name='date']")).toHaveAttribute('value', `${year}-0${monthNumber}-0${date}`);
 
