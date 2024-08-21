@@ -5,7 +5,7 @@ const config = {
     /* Look for test files in the "tests" directory, relative to this configuration file. */
     testDir: "./tests",
     // retries: 1, // Retry failed TC 1 time - To resolve 'Race condition' - helpful when flacky test present
-    workers: 1, // Disable file parallel execution mechanism
+    // workers: 1, // Disable file parallel execution mechanism
 
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
@@ -22,7 +22,11 @@ const config = {
         browserName: "firefox", // chromium | firefox | webKit
         headless: true, // Run the test in head/headless browser mode
         screenshot: "only-on-failure", // Screenshot setting modes are "off"|"on"|"only-on-failure"
+        video: 'off',
         trace: "retain-on-failure", // 'retain-on-failure' capure logs for failure steps | mode 'on' will capture the logs of each steps
+        // viewport: { width: 720, hight: 720 },
+        // ignoreHTTPSErrors: 'true',
+        Permissions: ['geolocation'], // Load browser with certian permissions ON
     },
 
     /* True - configure entire project to have all tests in all files to run in parallel */
