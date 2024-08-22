@@ -18,7 +18,7 @@ module.exports = defineConfig({
     timeout: 30 * 1000,
 
     /* Run tests in files in parallel */
-    fullyParallel: true,
+    fullyParallel: false,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
@@ -61,7 +61,7 @@ module.exports = defineConfig({
                 trace: 'on',
                 viewport: { width: 720, hight: 720 },
                 ignoreHTTPSErrors: 'true',
-                Permissions:['geolocation'],
+                Permissions:['geolocation'], // Load browser with certian permissions ON
                 ...devices["Desktop Safari"]
             },
         },
