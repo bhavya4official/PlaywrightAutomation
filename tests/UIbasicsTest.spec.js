@@ -95,7 +95,7 @@ test("Child window handle", async ({ browser }) => {
         documentLink.click(), //New page is opened
     ]); //This block keep iterating until both promises successfully fulfilled
     const text = await newPage.locator(".red").textContent();
-    const arraText = text.split("@");
+    const arrayText = text.split("@");
     const domain = arrayText[1].split(" ")[0];
     console.log(domain);
     await page.locator("#username").fill(domain);

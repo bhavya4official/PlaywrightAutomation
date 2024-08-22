@@ -7,7 +7,7 @@ const config = {
     // retries: 1, // Retry failed TC 1 time - To resolve 'Race condition' - helpful when flacky test present
     // workers: 1, // Disable file parallel execution mechanism
 
-    /* Maximum time one test can run for. */
+    /* Maximum time one test can run for. [Default: 30s] */
     timeout: 30 * 1000,
     expect: {
         //timeout for all assertion

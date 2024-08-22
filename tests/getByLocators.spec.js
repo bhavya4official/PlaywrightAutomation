@@ -1,3 +1,4 @@
+// @ts-check
 import { test, expect } from "@playwright/test";
 
 test("getByLabel - Playwright special locators", async ({ page }) => {

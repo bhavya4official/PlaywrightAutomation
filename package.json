@@ -6,7 +6,7 @@
   "scripts": {
     "smoke": "npx playwright test tests/getByLocators.spec.js --headed",
     "e2e": "npx playwright test --grep E2E --headed",
-    "safari": "npx playwright test -g @API --config original_playwright.config.js --project=webkit --headed"
+    "safari": "npx playwright test -g @API --project=webkit --config original_playwright.config.js --headed"
   },
   "keywords": [],
   "author": "",

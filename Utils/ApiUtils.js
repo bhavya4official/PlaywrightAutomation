@@ -17,6 +17,10 @@ class ApiUtils { /* Pre-condition data setup */
         return token;
     }
 
+    /**
+     * @param {JSON} orderPayload
+     * @return {object} response
+     */
     async createOrder(orderPayload) {
         let response = {}; // Declaring empty js object
         response.token = await this.getToken();
