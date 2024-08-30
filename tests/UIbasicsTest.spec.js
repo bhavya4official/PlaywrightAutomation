@@ -104,6 +104,7 @@ test("Child window handle", async ({ browser }) => {
 });
 
 /*
+page.locator('span').filter({ hasText: /^test$/ }).first().click();
 Playwright suggest to use CSS locator instead of xpath - #id | .class | [attribute='value'] | text=abc | tag:has-text('abc')
 
 Every operation return status of step/operation called 'Promise' {Pending / Rejected / Fulfilled}
