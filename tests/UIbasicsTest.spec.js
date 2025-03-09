@@ -5,8 +5,6 @@ import { test, expect } from "@playwright/test";
 test("Playwright test title", function () {
     // Test Isolation - every test gets a fresh browser environment
     console.log("Test format");
-    // The { page } argument tells Playwright Test to setup the page fixture and provide it to your test function.
-    // Fixtures help to define reusable setup/teardown code that can be used across multiple tests - page, browser fixtures are used to establish the environment for each test
 });
 
 //JS is asyncronous (each syntax try to execute parallelly) - to execute syncronously use async before function to use await() method
@@ -21,6 +19,8 @@ test("@smoke Browser Context playwright test", async ({ browser }) => {
 });
 
 test("Page Context playwright test", async ({ page }) => {
+    // The { page } argument tells Playwright Test to setup the page fixture and provide it to your test function.
+    // Fixtures help to define reusable setup/teardown code that can be used across multiple tests - page, browser fixtures are used to establish the environment for each test
     await page.goto("https://playwright.dev/docs/intro");
     //get page title - Assertion
     await expect(page).toHaveTitle("Installation | Playwright");
@@ -104,6 +104,7 @@ test("Child window handle", async ({ browser }) => {
 });
 
 /*
+page.locator('span').filter({ hasText: /^test$/ }).first().click();
 Playwright suggest to use CSS locator instead of xpath - #id | .class | [attribute='value'] | text=abc | tag:has-text('abc')
 
 Every operation return status of step/operation called 'Promise' {Pending / Rejected / Fulfilled}

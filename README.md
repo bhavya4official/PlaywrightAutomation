@@ -10,11 +10,13 @@
 
     /folderpath/`npm init playwright@latest`
 
-2. Run using Node Package Execute/Runner in headed mode
+   `npx playwright install` (Install Playwright browsers manually)
+
+3. Run using Node Package Execute/Runner in headed mode
 
     `npx playwright test --headed`
 
-3. HTML test report (Default)
+4. HTML test report (Default)
 
     `npx playwright show-report`
 ***

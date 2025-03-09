@@ -1,7 +1,7 @@
 /* Intercept network response: API response -> {insert fake response in browser} -> Browser render data on FE */
 
 const { test, expect, request } = require("@playwright/test");
-import { ApiUtils } from "../Utils/APIutils.js";
+import { ApiUtils } from "../Utils/ApiUtils";
 
 const loginPayload = { userEmail: "bhavya4official@gmail.com", userPassword: "Test@123" }; //Store payload in JS object format - at runtime it will convert to JSON format
 const orderPayload = { orders: [{ country: "Indonesia", productOrderedId: "6581cade9fd99c85e8ee7ff5" }] };
