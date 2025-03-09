@@ -16,6 +16,7 @@ test("@smoke Browser Context playwright test", async ({ browser }) => {
     const context = await browser.newContext(); // Where ever the action is performed - await should be there
     const page = await context.newPage(); //New tab instance
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    console.log("✅ Smoke test passed.");
 });
 
 test("Page Context playwright test", async ({ page }) => {
