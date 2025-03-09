@@ -36,7 +36,7 @@ const config = {
     // This config option limit the number of failures on CI to save resources
     maxFailures: process.env.CI ? 10 : undefined,
 };
-module.exports = config;
+module.exports = config; // Make this config available to whole framework
 
 /* If want to debug from VS code (useful to debug API hooks) -> add below script in package.json file & increase timeout from config file
 "scripts": {

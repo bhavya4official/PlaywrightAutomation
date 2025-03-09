@@ -22,7 +22,7 @@ module.exports = defineConfig({
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
-    retries: process.env.CI ? 2 : 0,
+    retries: process.env.CI ? 2 : 0, // set to 2 when running on CI
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -36,7 +36,7 @@ module.exports = defineConfig({
         baseURL: 'http://127.0.0.1:3000',
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-        trace: 'on-first-retry',
+        trace: 'on-first-retry', // record traces on first retry of each failed test (not on the first run and not on the second retry.)
     },
 
     /* Configure projects for major browsers - Declare browser engin*/
