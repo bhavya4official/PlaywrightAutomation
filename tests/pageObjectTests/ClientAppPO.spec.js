@@ -1,33 +1,36 @@
 const { test, expect } = require("@playwright/test");
-const { LoginPage } = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
-const { DashboardPage } = require('../../pageObjects/DashboardPage');
-const { CartPage } = require('../../pageObjects/CartPage');
-const { CheckoutPage } = require('../../pageObjects/CheckoutPage');
+// const { LoginPage } = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
+
+const {POManager} = require('../../pageObjects/POManager'); // Importing POManager class to use all object pages in this file
 
 test("Client app login", async ({ page }) => {
+
+    const poManager = new POManager(page); //This object holds all the objects of page classes
+
     const email = "bhavya4official@gmail.com";
     const password = "Test@123";
     const productName = "ZARA COAT 3";
     const products = page.locator(".card-body");
 
-    const loginPage = new LoginPage(page); // Creating LoginPage object by sending 'page' value as argument to constructor
+    // const loginPage = new LoginPage(page); // Creating LoginPage object by sending 'page' value as argument to constructor
+    const loginPage = poManager.getLoginPage(); // Creating LoginPage object using POManager object
 
     await loginPage.goTo();
     await loginPage.validLogin(email, password);
 
-    const dashboardPage = new DashboardPage(page); // Creating DashboardPage object
+    const dashboardPage = poManager.getDashboardPage(); // Creating DashboardPage object
 
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
 
-    const cartPage = new CartPage(page); // Creating CartPage object
+    const cartPage = poManager.getCartPage(); // Creating CartPage object
 
     const bool = cartPage.isProductPresent(productName);
     await expect(bool).toBeTruthy();
     cartPage.navigateToCheckout();     /* Navigate to Checkout page */
 
     /* Validating email id on checkout page */
-    const checkout = new CheckoutPage(page); // Creating CheckoutPage object
+    const checkout = poManager.getCheckoutPage(); // Creating CheckoutPage object
     await checkout.validateEmail(email);
     console.log("Email validated successfully");
 
@@ -50,7 +53,7 @@ test("Client app login", async ({ page }) => {
 
     await expect(page.locator(".hero-primary")).toHaveText("Thankyou for the order."); // Verify Thankyou message
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent(); // Getting & storing order id
-    console.log(orderId);
+    console.log('Order ID: '+orderId);
 
     /* Orders Page WF */
     await page.locator("button[routerlink*='myorders']").click();
