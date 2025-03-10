@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
-const {LoginPage} = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
-
+const { LoginPage } = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
+const { DashboardPage } = require('../../pageObjects/DashboardPage');
 
 test("Client app login", async ({ page }) => {
     const email = "bhavya4official@gmail.com";
@@ -10,26 +10,14 @@ test("Client app login", async ({ page }) => {
 
     const loginPage = new LoginPage(page); // Creating LoginPage object by sending 'page' value as argument to constructor
 
-    loginPage.goTo();
-    loginPage.validLogin(email,password);
+    await loginPage.goTo();
+    await loginPage.validLogin(email, password);
 
-    /* Find product on home page & add it to card */
+    const dashboardPage = new DashboardPage(page); // Creating DashboardPage object
     
+    await dashboardPage.searchProductAddCart(productName);
+    await dashboardPage.navigateToCart();
 
-    await page.locator(".card-body").first().waitFor(); // Wait for first element to be visible - need to wait because count() method does not have auto-wait capability
-    console.log(await page.locator(".card-body b").allTextContents());
-    console.log(">First item: " + await products.nth(0).locator("b").textContent());
-
-    for (let i = 0; i < await products.count(); ++i) {
-        console.log("> Inside for loop");
-        if (await products.nth(i).locator("b").textContent() === productName) {
-            await products.nth(i).locator("text = Add To Cart").click();
-            break;
-        }
-    }
-
-    /* Navigate to Cart page */
-    await page.locator("[routerlink*='cart']").click();
     await page.locator("div li").first().waitFor(); // It waits for mentioned elements to appear - because auto-wait capability is not present for isVisible() action in playwright
     const bool = await page.locator("h3:has-text('ZARA COAT 3')").isVisible(); //Using Psudo class - Find text which have h3 tag
     await expect(bool).toBeTruthy();
