@@ -1,5 +1,6 @@
 class DashboardPage {
     constructor(page) {
+        this.page = page;
         this.products = page.locator(".card-body");
         this.productsText = page.locator(".card-body b");
         this.cart = page.locator("[routerlink*='cart']");
@@ -22,6 +23,7 @@ class DashboardPage {
     /* Navigate to Cart page */
     async navigateToCart() {
     await this.cart.click();
+    await this.page.locator("div li").first().waitFor(); // It waits for mentioned elements to appear - because auto-wait capability is not present for isVisible() action in playwright
     }
 }
 module.exports = { DashboardPage };

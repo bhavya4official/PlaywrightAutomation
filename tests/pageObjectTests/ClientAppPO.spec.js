@@ -1,6 +1,8 @@
 const { test, expect } = require("@playwright/test");
 const { LoginPage } = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
 const { DashboardPage } = require('../../pageObjects/DashboardPage');
+const { CartPage } = require('../../pageObjects/CartPage');
+const { CheckoutPage } = require('../../pageObjects/CheckoutPage');
 
 test("Client app login", async ({ page }) => {
     const email = "bhavya4official@gmail.com";
@@ -14,19 +16,20 @@ test("Client app login", async ({ page }) => {
     await loginPage.validLogin(email, password);
 
     const dashboardPage = new DashboardPage(page); // Creating DashboardPage object
-    
+
     await dashboardPage.searchProductAddCart(productName);
     await dashboardPage.navigateToCart();
 
-    await page.locator("div li").first().waitFor(); // It waits for mentioned elements to appear - because auto-wait capability is not present for isVisible() action in playwright
-    const bool = await page.locator("h3:has-text('ZARA COAT 3')").isVisible(); //Using Psudo class - Find text which have h3 tag
-    await expect(bool).toBeTruthy();
+    const cartPage = new CartPage(page); // Creating CartPage object
 
-    /* Navigate to Checkout page */
-    await page.locator("text=Checkout").click();
+    const bool = cartPage.isProductPresent(productName);
+    await expect(bool).toBeTruthy();
+    cartPage.navigateToCheckout();     /* Navigate to Checkout page */
 
     /* Validating email id on checkout page */
-    await expect(page.locator(".user__name [type='text']").first()).toHaveText(email);
+    const checkout = new CheckoutPage(page); // Creating CheckoutPage object
+    await checkout.validateEmail(email);
+    console.log("Email validated successfully");
 
     /* Select Country dropdown - Handling auto suggestive dropdown options */
     await page.locator("[placeholder*='Select Country']").pressSequentially("ind"); //To enter value one-by-one
