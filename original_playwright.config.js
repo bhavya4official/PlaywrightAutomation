@@ -60,7 +60,7 @@ module.exports = defineConfig({
                 video: 'off',
                 trace: 'on',
                 viewport: { width: 720, hight: 720 },
-                ignoreHTTPSErrors: 'true',
+                ignoreHTTPSErrors: true,
                 Permissions: ['geolocation'], // Load browser with certian permissions ON
                 ...devices["Desktop Safari"]
             },

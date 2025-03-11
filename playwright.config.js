@@ -52,22 +52,22 @@ const config = {
             name: "firefox",
             use: { ...devices["Desktop Firefox"] },
         },
-        /*
-            {
-                name: "webkit",
-                use: {
-                    browserName: 'webkit',
-                    headless: true,
-                    screenshot: 'off',
-                    video: 'off',
-                    trace: 'on',
-                    viewport: { width: 720, hight: 720 },
-                    ignoreHTTPSErrors: 'true', // To accept SSL certificate error & continue with test execution (when website is not secure HTTPS)
-                    Permissions: ['geolocation'], // Load browser with certian permissions ON
-                    ...devices["Desktop Safari"]
-                },
+
+        {
+            name: "safari",
+            use: {
+                browserName: 'webkit',
+                headless: true,
+                screenshot: 'off',
+                video: 'off',
+                trace: 'on',
+                viewport: { width: 720, hight: 720 },
+                ignoreHTTPSErrors: true, // To accept SSL certificate error & continue with test execution (when website is not secure HTTPS)
+                Permissions: ['geolocation'], // Load browser with certian permissions ON
+                ...devices["Desktop Safari"]
             },
-        */
+        },
+
     ],
 
 };
