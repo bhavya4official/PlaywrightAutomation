@@ -6,7 +6,8 @@
   "scripts": {
     "smoke": "npx playwright test -g @smoke",
     "e2e": "npx playwright test --grep E2E --headed",
-    "safari": "npx playwright test -g @API --config original_playwright.config.js --project Safari_with_custom_viewport --headed"
+    "safari_config2": "npx playwright test -g @API --config original_playwright.config.js --project Safari_with_custom_viewport --headed",
+    "smoke-allure": "npx playwright test -g @smoke --reporter=line,allure-playwright && allure generate allure-results --clean"
   },
   "keywords": [],
   "author": "Bhavya",

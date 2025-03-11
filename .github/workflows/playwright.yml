@@ -18,7 +18,7 @@ jobs:
       - name: ⚙️ Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: 🤖 Run Playwright @Smoke tests
-        run: npm run safari
+        run: npm run smoke
       - uses: actions/upload-artifact@v4
         if: always()
         with:
