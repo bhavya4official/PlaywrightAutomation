@@ -19,6 +19,7 @@ class LoginPage { // Class name should be same as file name
         await this.userEmail.fill(userEmail);
         await this.password.fill(password);
         await this.signInbutton.click();
+        await this.page.waitForLoadState('networkidle'); // After login - Wait for next page to load
     }
 
 }
