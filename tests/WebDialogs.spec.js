@@ -40,7 +40,7 @@ test("Partial & full screenshot", async ({ page }) => {
 });
 
 // Take expected SS -> Store -> compare with new actual SS
-test.only("Visual testing using screenshot comparison", async ({ page }) => {
+test("Visual testing using screenshot comparison", async ({ page }) => {
     await page.goto("https://www.google.co.in/");
     expect(await page.screenshot()).toMatchSnapshot('visualTesting.png');
     await expect(page).toHaveScreenshot('visualTesting.png');

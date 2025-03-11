@@ -6,7 +6,7 @@ const { POManager } = require('../../pageObjects/POManager'); // Importing POMan
 // convert json->string->js object
 const dataset = JSON.parse(JSON.stringify(require("../../utils/placeOrderTestData.json"))); // Importing JSON file to use test data & converting it to JS object
 
-test("Client app login", async ({ page }) => {
+test("Client app login using POM", async ({ page }) => {
 
     const poManager = new POManager(page); //This object holds all the objects of page classes
 

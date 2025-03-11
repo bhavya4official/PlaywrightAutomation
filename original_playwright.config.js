@@ -12,7 +12,7 @@ const { defineConfig, devices } = require("@playwright/test");
  */
 module.exports = defineConfig({
     /* Look for test files in the "tests" directory, relative to this configuration file. */
-    testDir: './tests',
+    // testDir: './tests',
 
     /* Maximum time one test can run for. */
     timeout: 30 * 1000,
@@ -52,7 +52,7 @@ module.exports = defineConfig({
         },
 
         {
-            name: "webkit",
+            name: "Safari_with_custom_viewport",
             use: {
                 browserName: 'webkit',
                 headless: true,
@@ -61,7 +61,7 @@ module.exports = defineConfig({
                 trace: 'on',
                 viewport: { width: 720, hight: 720 },
                 ignoreHTTPSErrors: 'true',
-                Permissions:['geolocation'], // Load browser with certian permissions ON
+                Permissions: ['geolocation'], // Load browser with certian permissions ON
                 ...devices["Desktop Safari"]
             },
         },

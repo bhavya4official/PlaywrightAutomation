@@ -1,18 +1,19 @@
 {
   "name": "playwrightautomation",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "Udemy - Playwright test automation practice",
   "main": "index.js",
   "scripts": {
     "smoke": "npx playwright test -g @smoke",
     "e2e": "npx playwright test --grep E2E --headed",
-    "safari": "npx playwright test -g @API --project=webkit --config original_playwright.config.js --headed"
+    "safari": "npx playwright test -g @API --config original_playwright.config.js --project Safari_with_custom_viewport --headed"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bhavya",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.45.2",
-    "@types/node": "^20.14.11"
+    "@types/node": "^20.14.11",
+    "allure-playwright": "^3.2.0"
   }
 }
