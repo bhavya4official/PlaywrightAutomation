@@ -1,6 +1,6 @@
 /* Create object of ApiUtils class to generate login token & orderId */
 const { test, expect, request } = require("@playwright/test");
-const { ApiUtils } = require("../Utils/APIutils");
+const { ApiUtils } = require("../Utils/ApiUtils");
 // const { ApiUtils } = require("./Utils/ApiUtils");
 // import { ApiUtils } from "./Utils/ApiUtils";
 

@@ -4,7 +4,7 @@ const { customTest } = require("../../Utils/test-base"); // Importing customTest
 // const { LoginPage } = require('../../pageObjects/LoginPage'); // Importing LoginPage class to use in this file
 const { POManager } = require('../../pageObjects/POManager'); // Importing POManager class to use all object pages in this file
 // convert json->string->js object
-const dataset = JSON.parse(JSON.stringify(require("../../utils/placeOrderTestData.json"))); // Importing JSON file to use test data & converting it to JS object
+const dataset = JSON.parse(JSON.stringify(require("../../Utils/placeOrderTestData.json"))); // Importing JSON file to use test data & converting it to JS object
 
 test("Client app login using POM", async ({ page }) => {
 
