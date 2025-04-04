@@ -14,6 +14,7 @@ const config = {
 
     // This config option limit the number of failures on CI to save resources
     maxFailures: process.env.CI ? 10 : undefined,
+    
     /* Maximum time one test can run for. [Default: 30s] */
     timeout: 30 * 1000,
     expect: {
