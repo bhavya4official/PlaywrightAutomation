@@ -6,7 +6,7 @@
 
 
 ### Get started:
-1. Initialize playwright project in the folder
+1. Initialise the Playwright project in the folder
 
     /projectDir/`npm init playwright@latest`
 
@@ -33,7 +33,7 @@
 
    `Chromium-based` (Chrome, Edge, Opera) `Firefox` `WebKit` (Safari)
 
-3. Multipaltform support
+3. Multiplatform support
 
    `Windows` `macOS` `Linux`
    Also support native mobile emulation `Google Chrome on Android` & `Safari on iOS`
@@ -133,6 +133,10 @@ UI Test Runner -
 `npx playwright codegen google.com (URL is optional)`
 
 Launch codegen tool - 'Record & Playback' feature to auto-generate automation script for Actions & Assertions
+
+`npm run <script-name>`
+
+Run the test script defined in the package.json file.
 
 ***
 
