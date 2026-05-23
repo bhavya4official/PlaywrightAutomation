@@ -6,13 +6,15 @@
 
 
 ### Get started:
-1. Initialize playwright project in folder
+1. Initialize playwright project in the folder
 
     /projectDir/`npm init playwright@latest`
 
    `npx playwright install` (Install Playwright browsers manually)
 
-3. Run using Node Package Execute/Runner in headed mode
+   `npx playwright install-deps` (Install Browser Dependencies)
+
+3. Run using Node Package Execute/Runner in the headed mode
 
     `npx playwright test --headed`
 
