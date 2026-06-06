@@ -1,7 +1,8 @@
-/*Page class is a class which have all the locators of a page & methods to perform actions on those locators*/
-class LoginPage { // Class name should be same as file name
-
-    // Constructor is a special method of a class, which is called when the object of the class is created - It is used to initialize the class variables 
+/*Page class is a class that has all the locators of a page & methods to perform actions on those locators*/
+// Encapsulates the elements and actions of the Login Page
+class LoginPage { // Class name should be same as the file name
+    // Locators
+    // A constructor is a special method of a class, which is called when the object of the class is created. It is used to initialize the class variables 
     constructor(page) { // Automatically invoked when the object of a class is created (Catch the page details)
         // this variable is a class varible (Global) -> these automatically initialize once object of this class is created
         this.page = page; // this refers to current class
