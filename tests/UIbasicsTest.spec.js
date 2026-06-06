@@ -8,7 +8,6 @@ test("Playwright test title", function () {
 });
 
 //JS is asyncronous (each syntax try to execute parallelly) - to execute syncronously use async before function to use await() method
-
 test("@smoke Browser Context playwright test", async ({ browser }) => {
     //{browser} fixture - Global variable which are available in entire project
     //Each test execute in isolated BrowserContext with fresh environment
@@ -20,6 +19,7 @@ test("@smoke Browser Context playwright test", async ({ browser }) => {
     console.log("✅ Smoke test passed.");
 });
 
+// Clean test containing only business logic and assertions
 test("Page Context playwright test", async ({ page }) => {
     // The { page } argument tells Playwright Test to setup the page fixture and provide it to your test function.
     // Fixtures help to define reusable setup/teardown code that can be used across multiple tests - page, browser fixtures are used to establish the environment for each test
